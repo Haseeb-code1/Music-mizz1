@@ -11,7 +11,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
   currentfolder = folder;
-  let a = await fetch(`http://192.168.0.104:5500/${folder}/`);
+  let a = await fetch(`https://calm-kelpie-009832.netlify.app/${folder}/`);
   let response = await a.text();
 
   let div = document.createElement("div");
@@ -72,7 +72,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  let a = await fetch(`http://192.168.0.104:5500/songs/`);
+  let a = await fetch(`https://calm-kelpie-009832.netlify.app/songs/`);
   let response = await a.text();
 
   let div = document.createElement("div");
@@ -90,7 +90,7 @@ async function displayAlbums() {
       console.log(folder);
 
       let a = await fetch(
-        `http://192.168.0.104:5500/songs/${folder}/info.json`
+        `https://calm-kelpie-009832.netlify.app/songs/${folder}/info.json`
       );
       let response = await a.json();
       console.log(response);
@@ -195,3 +195,4 @@ async function main() {
 }
 
 main();
+
